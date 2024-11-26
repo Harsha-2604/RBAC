@@ -106,7 +106,7 @@ This project interacts with a mock backend (JSON Server) running on `http://loca
 ## Author
 
 - **Your Name**  
-  - GitHub: [Your GitHub Profile Link](https://github.com/yourusername)
-  - Email: [Your Email](mailto:your.email@example.com)
+  - GitHub: [Your GitHub Profile Link](https://github.com/Harsha-2604)
+  - Email: [Your Email](mailto:v.harshavardhan2604.com)
 
 "# RBAC" 
