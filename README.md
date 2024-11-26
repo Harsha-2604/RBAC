@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+Here’s a final **README.md** template for your **User Management System** project that you can submit for your assignment:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+```markdown
+# User Management System
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+This project is a **User Management System** built with **React** for the front-end and **JSON Server** as a mock backend to handle user data. The system allows users to **add**, **edit**, and **delete** users, and each user has a unique `id`, `name`, `role`, and `status`. The front-end communicates with the backend via HTTP requests using **Axios**.
 
-### `npm start`
+## Features
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Add New User**: Users can be added with a name, role, and status.
+- **Edit User**: Existing users can be updated.
+- **Delete User**: Users can be deleted from the list.
+- **List Users**: Users are displayed in a table, sorted by their IDs.
+- **Status Handling**: Each user has an active or inactive status.
+  
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **React**: Front-end framework for building the user interface.
+- **Material-UI**: UI component library for styling the application.
+- **Axios**: For making HTTP requests to the backend.
+- **JSON Server**: Mock backend to simulate CRUD operations on user data.
+- **JavaScript**: For logic and state management.
+  
+## Installation
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Node.js** and **npm** should be installed. If not, you can install them from [nodejs.org](https://nodejs.org/).
 
-### `npm run build`
+### Steps to Run the Application
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/yourusername/rbac-user-management.git
+   cd rbac-user-management
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. **Set up JSON Server (for backend)**:
+   - Install JSON Server globally if it's not already installed:
+     ```bash
+     npm install -g json-server
+     ```
+   - Start the JSON Server with the `db.json` file (included in the project):
+     ```bash
+     json-server --watch db.json --port 5000
+     ```
+   This will start a mock backend server at `http://localhost:5000`.
 
-### `npm run eject`
+4. **Run the React application**:
+   ```bash
+   npm start
+   ```
+   This will start the React app at `http://localhost:3000`.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Functionality
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Add User**:
+  - Click the "Add User" button to open a form where you can enter a new user's name, role, and status. 
+  - The ID is assigned automatically based on the highest existing ID in the database.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Edit User**:
+  - To edit a user, click the "Edit" button next to the user you want to modify. You can change the name, role, and status.
+  
+- **Delete User**:
+  - To delete a user, click the "Delete" button next to the user you wish to remove.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **User List**:
+  - The users are displayed in a table, showing their `ID`, `Name`, `Role`, and `Status`.
+  - The users are always sorted by their `ID` in ascending order.
 
-## Learn More
+## API Endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This project interacts with a mock backend (JSON Server) running on `http://localhost:5000`. The following API endpoints are used:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- `GET /users`: Fetches all users.
+- `POST /users`: Adds a new user.
+- `PUT /users/{id}`: Updates an existing user.
+- `DELETE /users/{id}`: Deletes a user.
 
-### Code Splitting
+### Example:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```json
+// GET /users
+[
+  { "id": 1, "name": "John Doe", "role": "Admin", "status": "Active" },
+  { "id": 2, "name": "Jane Smith", "role": "User", "status": "Inactive" }
+]
+```
 
-### Analyzing the Bundle Size
+## Known Issues
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- The user IDs are generated based on the highest existing ID in the database. If users are deleted, the IDs will not be reused.
+  
+## Future Improvements
 
-### Making a Progressive Web App
+- Implementing role-based access control (RBAC) for users.
+- Adding form validation and error handling for invalid input.
+- Enabling search and filtering features for the user list.
+  
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- **Your Name**  
+  - GitHub: [Your GitHub Profile Link](https://github.com/yourusername)
+  - Email: [Your Email](mailto:your.email@example.com)
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+"# RBAC" 

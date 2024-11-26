@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from 'react';
+import Navbar from './components/Navbar';
+import UserManagement from './components/UserManagement';
+import RoleManagement from './components/RoleManagement';
+import PermissionManagement from './components/PermissionManagement';
 
-function App() {
+const App = () => {
+  const [currentView, setCurrentView] = useState('user-management');
+
+  const handleViewChange = (view) => {
+    setCurrentView(view);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar handleViewChange={handleViewChange} />
+      <div style={{ padding: '20px' }}>
+        {currentView === 'user-management' && <UserManagement />}
+        {currentView === 'role-management' && <RoleManagement />}
+        {currentView === 'permission-management' && <PermissionManagement />}
+      </div>
     </div>
   );
-}
+};
 
 export default App;
