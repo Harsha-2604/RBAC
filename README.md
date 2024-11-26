@@ -107,4 +107,4 @@ This project interacts with a mock backend (JSON Server) running on `http://loca
 
 - **Your Name**  
   - GitHub: https://github.com/Harsha-2604)
-  - Email: (mailto:v.harshavardhan2604.com)
+  - Email: (mailto:v.harshavardhan2604@gmail.com)
