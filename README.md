@@ -1,4 +1,3 @@
-Here’s a final **README.md** template for your **User Management System** project that you can submit for your assignment:
 
 ```markdown
 # User Management System
